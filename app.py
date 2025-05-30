@@ -13,7 +13,7 @@ def index():
         user_prompt = request.form["prompt"]
         try:
             response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
+                model="gpt-4",
                 messages=[{"role": "user", "content": user_prompt}]
             )
             response_text = response.choices[0].message.content.strip()
