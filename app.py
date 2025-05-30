@@ -1,10 +1,16 @@
 from flask import Flask, request, render_template
 import openai
 import os
+from flask import send_from_directory
 
 openai.api_key = os.getenv("OPENAI_API_KEY")  # Provided by Render
 
 app = Flask(__name__)
+
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory('static', 'favicon.ico')
 
 @app.route("/", methods=["GET", "POST"])
 def index():
