@@ -1,0 +1,17 @@
+ 
+<!doctype html>
+<html>
+<head><title>LLM Chat</title></head>
+<body>
+    <h1>Ask Something</h1>
+    <form method="post">
+        <textarea name="prompt" rows="5" cols="50" placeholder="Enter your prompt..."></textarea><br><br>
+        <input type="submit" value="Send">
+    </form>
+
+    {% if response %}
+        <h2>Response:</h2>
+        <p>{{ response }}</p>
+    {% endif %}
+</body>
+</html>
